@@ -1,0 +1,45 @@
+---
+// src/pages/empresas.astro
+import Layout from '../layouts/Layout.astro';
+
+// Array de los servicios tomados del briefing
+const serviciosEmpresa = [
+    { nombre: "Ssoma (como servicio)", fuente: 7 },
+    { nombre: "Psicología Ocupacional", fuente: 8 },
+    { nombre: "Selección de Personal", fuente: 9 },
+    { nombre: "Campañas Ocupacionales", fuente: 10 },
+    { nombre: "Evaluaciones Psicológicas (Ocupacionales)", fuente: 11 },
+    { nombre: "Asesoría y Empleabilidad", fuente: 12 },
+    { nombre: "Capacitaciones y Talleres", fuente: 13 },
+    { nombre: "Diagnóstico Organizacional", fuente: 14 },
+    { nombre: "Desarrollo Web", fuente: 15 },
+];
+---
+<Layout title="Soluciones para Empresas">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5">Soluciones para Empresas</h1>
+            <p class="lead">Ayudamos a tu organización a crecer con talento y estrategia.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            
+            {serviciosEmpresa.map(servicio => (
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {servicio.nombre}
+                            </h5>
+                            <p class="card-text">
+                                (Descripción corta del servicio. "Marky" debe rellenar esto).
+                            </p>
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+
+        </div>
+    </div>
+</Layout>
