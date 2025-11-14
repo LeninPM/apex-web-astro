@@ -1,0 +1,28 @@
+{
+    "whatsapp": {
+        "numero": "51991057926",
+        "mensaje": "Hola, estoy interesado en sus servicios para empresas."
+    },
+    "redesSociales": [
+        {
+            "nombre": "Instagram",
+            "url": "https://instagram.com/apex_mentoring/?hl=es-es"
+        },
+        {
+            "nombre": "Facebook",
+            "url": "https://facebook.com/profile.php?id=61565695614986"
+        },
+        {
+            "nombre": "TikTok",
+            "url": "https://tiktok.com/@apex_mentoring"
+        },
+        {
+            "nombre": "LinkedIn",
+            "url": "https://linkedin.com/company/apex-s-a/posts/?feedView=all"
+        },
+        {
+            "nombre": "YouTube",
+            "url": "https://www.youtube.com/@enriquesalvatierra-e2f"
+        }
+    ]
+}
