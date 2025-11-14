@@ -1,10 +1,92 @@
 ---
 // src/components/Footer.astro
-const anio = new Date().getFullYear(); // JavaScript simple dentro de Astro
+
+// 1. Importamos los datos de nuestro archivo JSON
+import datos from '../data/sitio.json';
+
+// 2. Mapeo de Nombres a Clases de Iconos de Bootstrap
+// ESTA LÍNEA TIENE LA CORRECCIÓN: Record<string, string>
+const iconMap: Record<string, string> = {
+  instagram: "bi bi-instagram",
+  facebook: "bi bi-facebook",
+  tiktok: "bi bi-tiktok",
+  linkedin: "bi bi-linkedin",
+  youtube: "bi bi-youtube"
+};
+
+// 3. Obtenemos el año actual
+const anio = new Date().getFullYear();
 ---
-<footer class="container text-center py-4 mt-5 border-top">
-    <p>&copy; {anio} Consultoría Apex. Todos los derechos reservados.</p>
-    <p>
-        <a href="#">Volver arriba</a>
-    </p>
+
+<footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <a class="navbar-brand fw-bold text-white fs-4" href="/">
+                    <img src="/favicon.svg" alt="Apex Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    Consultoría Apex
+                </a>
+                <p class="mt-2 small text-white-50">
+                    Tu socio estratégico en talento y tecnología.
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3">Para Empresas</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="/empresas" class="text-decoration-none link-light">
+                            Ver Soluciones
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/empresas#servicios" class="text-decoration-none link-light opacity-75">
+                            Selección de Personal [cite: 9]
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/empresas#servicios" class="text-decoration-none link-light opacity-75">
+                            Psicología Ocupacional [cite: 8]
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3">Para Candidatos</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="/candidatos" class="text-decoration-none link-light">
+                            Impulsa tu Carrera
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/candidatos#cv" class="text-decoration-none link-light opacity-75">
+                            Creación de CV [cite: 16]
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3">Síguenos</h5>
+                
+                {datos.redesSociales.map(red => (
+                    <a 
+                      href={red.url} 
+                      target="_blank" 
+                      class="link-light me-3 fs-4"
+                      aria-label={`Visita nuestro ${red.nombre}`}>
+                        <i class={iconMap[red.nombre.toLowerCase()]}></i>
+                    </a>
+                ))}
+            </div>
+        </div>
+
+        <hr class="my-4">
+        <div class="text-center text-white-50 small">
+            <p>&copy; {anio} Consultoría Apex. Todos los derechos reservados.</p>
+        </div>
+    </div>
 </footer>
