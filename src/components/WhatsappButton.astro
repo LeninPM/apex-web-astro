@@ -13,46 +13,46 @@ const whatsappUrl = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}
 ---
 
 <a
-    href={whatsappUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="whatsapp-float"
-    aria-label="Contactar por WhatsApp"
+  href={whatsappUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-float"
+  aria-label="Contactar por WhatsApp"
 >
-    <i class="bi bi-whatsapp"></i>
+  <i class="bi bi-whatsapp"></i>
 </a>
 
 <style>
-    .whatsapp-float {
-        position: fixed; /* ¡Hace que flote! */
-        bottom: 25px; /* 25px desde abajo */
-        right: 25px; /* 25px desde la derecha */
+  .whatsapp-float {
+    position: fixed; /* ¡Hace que flote! */
+    bottom: 25px; /* 25px desde abajo */
+    right: 25px; /* 25px desde la derecha */
 
-        /* Estilos del botón */
-        background-color: #25d366; /* Color oficial de WhatsApp */
-        color: white; /* Color del icono */
-        width: 60px;
-        height: 60px;
-        border-radius: 50%; /* Lo hace redondo */
+    /* Estilos del botón */
+    background-color: #25d366; /* Color oficial de WhatsApp */
+    color: white; /* Color del icono */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Lo hace redondo */
 
-        /* Centrado del icono */
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    /* Centrado del icono */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        /* Sombra y animación */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        font-size: 30px; /* Tamaño del icono */
-        transition: all 0.2s ease-in-out;
+    /* Sombra y animación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 30px; /* Tamaño del icono */
+    transition: all 0.2s ease-in-out;
 
-        /* Para que esté encima de todo */
-        z-index: 1000;
-    }
+    /* Para que esté encima de todo */
+    z-index: 1000;
+  }
 
-    /* Efecto 'hover' (cuando el mouse está encima) */
-    .whatsapp-float:hover {
-        background-color: #128c7e; /* Un verde más oscuro */
-        color: white;
-        transform: scale(1.1); /* Lo agranda un 10% */
-    }
+  /* Efecto 'hover' (cuando el mouse está encima) */
+  .whatsapp-float:hover {
+    background-color: #128c7e; /* Un verde más oscuro */
+    color: white;
+    transform: scale(1.1); /* Lo agranda un 10% */
+  }
 </style>

@@ -1,54 +1,233 @@
 ---
 // src/pages/contacto.astro
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
+
 <Layout title="Contacto">
-    <div class="container py-5">
-        <div class="text-center mb-5">
-            <h1 class="display-5">Ponte en Contacto</h1>
-            <p class="lead">Estamos listos para ayudarte. Elige el formulario adecuado.</p>
-        </div>
-
-        <ul class="nav nav-tabs nav-fill mb-3" id="contactTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="candidato-tab" data-bs-toggle="tab" data-bs-target="#candidato-pane" type="button" role="tab" aria-controls="candidato-pane" aria-selected="true">
-                Soy Candidato
-            </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="empresa-tab" data-bs-toggle="tab" data-bs-target="#empresa-pane" type="button" role="tab" aria-controls="empresa-pane" aria-selected="false">
-                    Soy Empresa
-                </button>
-            </li>
-        </ul>
-
-        <div class="tab-content" id="contactTabsContent">
-            
-            <div class="tab-pane fade show active" id="candidato-pane" role="tabpanel" aria-labelledby="candidato-tab">
-                <form id="form-candidato" class="border p-4 rounded-3 bg-light">
-                    <p class="fw-bold">Formulario de Candidatos</p>
-                    <div class="mb-3">
-                        <label for="c-nombre" class="form-label">Nombre Completo</label>
-                        <input type="text" class="form-control" id="c-nombre" name="nombre" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="c-email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="c-email" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="c-mensaje" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="c-mensaje" name="mensaje" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                    <div id="c-respuesta" class="mt-3"></div> </form>
-            </div>
-
-            <div class="tab-pane fade" id="empresa-pane" role="tabpanel" aria-labelledby="empresa-tab">
-                <form id="form-empresa" class="border p-4 rounded-3 bg-light">
-                    <p class="fw-bold">Formulario de Empresas</p>
-                    <p>(Aquí iría el formulario de "Empresa", similar al otro pero con campos como "RUC" o "Nombre de Empresa")</p>
-                    </form>
-            </div>
-        </div>
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h1 class="display-5">Ponte en Contacto</h1>
+      <p class="lead">
+        Estamos listos para ayudarte. Elige el formulario adecuado.
+      </p>
     </div>
+
+    <ul class="nav nav-tabs nav-fill mb-3" id="contactTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link active"
+          id="candidato-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#candidato-pane"
+          type="button"
+          role="tab"
+          aria-controls="candidato-pane"
+          aria-selected="true"
+        >
+          Soy Candidato
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="empresa-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#empresa-pane"
+          type="button"
+          role="tab"
+          aria-controls="empresa-pane"
+          aria-selected="false"
+        >
+          Soy Empresa
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="contactTabsContent">
+      <div
+        class="tab-pane fade show active"
+        id="candidato-pane"
+        role="tabpanel"
+        aria-labelledby="candidato-tab"
+      >
+        <form id="form-candidato" class="border p-4 rounded-3 bg-light">
+          <p class="fw-bold">Formulario de Candidatos</p>
+          <div class="mb-3">
+            <label for="c-nombre" class="form-label">Nombre Completo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="c-nombre"
+              name="nombre"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="c-email" class="form-label">Correo Electrónico</label>
+            <input
+              type="email"
+              class="form-control"
+              id="c-email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="c-mensaje" class="form-label">Mensaje</label>
+            <textarea
+              class="form-control"
+              id="c-mensaje"
+              name="mensaje"
+              rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+          <div id="c-respuesta" class="mt-3"></div>
+        </form>
+      </div>
+
+      <div
+        class="tab-pane fade"
+        id="empresa-pane"
+        role="tabpanel"
+        aria-labelledby="empresa-tab"
+      >
+        <form id="form-empresa" class="border p-4 rounded-3 bg-light">
+          <p class="fw-bold">Formulario de Empresas</p>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="e-empresa" class="form-label"
+                >Nombre de la Empresa</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="e-empresa"
+                name="empresa"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="e-nombre" class="form-label"
+                >Tu Nombre (Contacto)</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="e-nombre"
+                name="nombre"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="e-email" class="form-label">Email Corporativo</label>
+              <input
+                type="email"
+                class="form-control"
+                id="e-email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="e-telefono" class="form-label">Teléfono</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="e-telefono"
+                name="telefono"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="e-mensaje" class="form-label"
+              >¿Cómo podemos ayudarte?</label
+            >
+            <textarea
+              class="form-control"
+              id="e-mensaje"
+              name="mensaje"
+              rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+          <div id="e-respuesta" class="mt-3"></div>
+        </form>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<script>
+  // --- LÓGICA PARA FORMULARIO 1 (CANDIDATO) ---
+  const formCandidato = document.getElementById(
+    "form-candidato"
+  ) as HTMLFormElement | null;
+  const respuestaDivCandidato = document.getElementById(
+    "c-respuesta"
+  ) as HTMLDivElement | null;
+
+  if (formCandidato && respuestaDivCandidato) {
+    formCandidato.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      respuestaDivCandidato.innerHTML = '<p class="text-info">Enviando...</p>';
+      try {
+        const formData = new FormData(formCandidato);
+        const dataObj = Object.fromEntries(formData.entries());
+
+        const response = await fetch("/api/contacto-candidato", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dataObj),
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.message);
+
+        respuestaDivCandidato.innerHTML = `<p class="text-success">${result.message}</p>`;
+        formCandidato.reset();
+      } catch (error) {
+        if (error instanceof Error) {
+          respuestaDivCandidato.innerHTML = `<p class="text-danger">Error: ${error.message}</p>`;
+        } else {
+          respuestaDivCandidato.innerHTML = `<p class="text-danger">Ocurrió un error.</p>`;
+        }
+      }
+    });
+  }
+
+  // --- (NUEVO) LÓGICA PARA FORMULARIO 2 (EMPRESA) ---
+  const formEmpresa = document.getElementById(
+    "form-empresa"
+  ) as HTMLFormElement | null;
+  const respuestaDivEmpresa = document.getElementById(
+    "e-respuesta"
+  ) as HTMLDivElement | null;
+
+  if (formEmpresa && respuestaDivEmpresa) {
+    formEmpresa.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      respuestaDivEmpresa.innerHTML = '<p class="text-info">Enviando...</p>';
+      try {
+        const formData = new FormData(formEmpresa);
+        const dataObj = Object.fromEntries(formData.entries());
+
+        // ¡Apunta a la nueva API!
+        const response = await fetch("/api/contacto-empresa", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dataObj),
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.message);
+
+        respuestaDivEmpresa.innerHTML = `<p class="text-success">${result.message}</p>`;
+        formEmpresa.reset();
+      } catch (error) {
+        if (error instanceof Error) {
+          respuestaDivEmpresa.innerHTML = `<p class="text-danger">Error: ${error.message}</p>`;
+        } else {
+          respuestaDivEmpresa.innerHTML = `<p class="text-danger">Ocurrió un error.</p>`;
+        }
+      }
+    });
+  }
+</script>
