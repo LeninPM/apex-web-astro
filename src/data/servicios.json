@@ -3,42 +3,93 @@
         { 
             "nombre": "Selección de Talento", 
             "slug": "seleccion-de-talento",
-            "descripcion": "Identificamos y captamos a los mejores candidatos para tu empresa, a través de procesos estructurados de búsqueda, filtrado y evaluación, garantizando perfiles alineados a las necesidades y cultura de tu organización."
+            "imagen": "/images/servicios/seleccion.jpg",
+            "descripcion": "Identificamos y captamos a los mejores candidatos para tu empresa, a través de procesos estructurados de búsqueda, filtrado y evaluación, garantizando perfiles alineados a las necesidades y cultura de tu organización.",
+            "subServicios": [
+                "Reclutamiento y Selección de Personal",
+                "Headhunting Ejecutivo",
+                "Evaluaciones por Competencias",
+                "Verificación de Referencias",
+                "Procesos de Selección Masivos"
+            ]
         },
         { 
             "nombre": "Evaluaciones Psicológicas", 
             "slug": "evaluaciones-psicologicas",
-            "descripcion": "Aplicamos pruebas psicológicas y ocupacionales con estándares técnicos, brindando informes precisos que validan la idoneidad, competencias y bienestar emocional de los colaboradores en distintos niveles."
+            "imagen": "/images/servicios/psicologia.webp",
+            "descripcion": "Aplicamos pruebas psicológicas y ocupacionales con estándares técnicos, brindando informes precisos que validan la idoneidad, competencias y bienestar emocional de los colaboradores.",
+            "subServicios": [
+                "Pruebas Psicotécnicas",
+                "Evaluaciones de Potencial",
+                "Entrevistas por Competencias",
+                "Evaluaciones de Clima Laboral",
+                "Informes Psicolaborales"
+            ]
         },
         { 
             "nombre": "Consultoría en RR. HH.", 
             "slug": "consultoria-rrhh",
-            "descripcion": "Diseñamos e implementamos estrategias y políticas en gestión humana, analizando procesos laborales, desempeño y clima organizacional, para fomentar un entorno productivo y gestionar el talento de manera estratégica."
+            "imagen": "/images/servicios/consultoria.jpg",
+            "descripcion": "Diseñamos e implementamos estrategias y políticas en gestión humana, analizando procesos laborales, desempeño y clima organizacional, para fomentar un entorno productivo.",
+            "subServicios": [
+                "Diagnóstico de Clima Organizacional",
+                "Diseño de Estructuras Salariales",
+                "Manuales de Organización y Funciones (MOF)",
+                "Evaluación de Desempeño",
+                "Gestión del Cambio"
+            ]
         },
         { 
             "nombre": "Gestión en SSOMA", 
             "slug": "gestion-ssoma",
-            "descripcion": "Implementamos diagnósticos, programas y acciones en seguridad y salud ocupacional, enfocados en la prevención de riesgos laborales, el cumplimiento normativo y la protección de los trabajadores."
+            "imagen": "/images/servicios/ssoma.jpg",
+            "descripcion": "Implementamos diagnósticos, programas y acciones en seguridad y salud ocupacional, enfocados en la prevención de riesgos laborales, el cumplimiento normativo y la protección de los trabajadores.",
+            "subServicios": [
+                "Implementación de Sistema de Gestión SST",
+                "Identificación de Peligros (IPERC)",
+                "Auditorías de Seguridad",
+                "Capacitaciones de Seguridad (Ley 29783)",
+                "Plan de Vigilancia Médica"
+            ]
         },
         { 
             "nombre": "Desarrollo Web", 
             "slug": "desarrollo-web",
-            "descripcion": "Creamos sitios web funcionales y personalizados que responden a las necesidades y objetivos de tu empresa, fortaleciendo su presencia digital con diseño moderno y experiencia de usuario optimizada."
+            "imagen": "/images/servicios/web.webp",
+            "descripcion": "Creamos sitios web funcionales y personalizados que responden a las necesidades y objetivos de tu empresa, fortaleciendo su presencia digital con diseño moderno y experiencia de usuario optimizada.",
+            "subServicios": [
+                "Diseño de Páginas Web Corporativas",
+                "Desarrollo de Intranets",
+                "Sistemas de Gestión a Medida",
+                "Landing Pages para Campañas",
+                "Integración de Pasarelas de Pago"
+            ]
         },
         { 
             "nombre": "Personal de Salud Externo", 
             "slug": "personal-salud-externo",
-            "descripcion": "Proveemos personal profesional en salud para campañas, proyectos y actividades médicas corporativas, asegurando atención experta y cumplimiento del protocolo ocupacional."
+            "imagen": "/images/servicios/salud.webp",
+            "descripcion": "Proveemos personal profesional en salud para campañas, proyectos y actividades médicas corporativas, asegurando atención experta y cumplimiento del protocolo ocupacional.",
+            "subServicios": [
+                "Médicos Ocupacionales",
+                "Enfermeras Ocupacionales",
+                "Campañas de Salud Preventiva",
+                "Atención de Tópicos en Planta",
+                "Vigilancia Médica Ocupacional"
+            ]
         },
         { 
             "nombre": "Capacitaciones Corporativas", 
             "slug": "capacitaciones-corporativas",
-            "descripcion": "Desarrollamos programas formativos, talleres y charlas orientadas a potenciar las habilidades de los colaboradores, mejorar el liderazgo y promover buenas prácticas laborales dentro de tu organización."
-        },
-        { 
-            "nombre": "Empleabilidad y Branding Profesional", 
-            "slug": "empleabilidad-y-branding",
-            "descripcion": "Brindamos orientación personalizada a estudiantes y profesionales para su inserción efectiva en el mercado laboral. A través de coaching, desarrollo de CV, simulaciones y acompañamiento."
+            "imagen": "/images/servicios/capacitacion.jpeg",
+            "descripcion": "Desarrollamos programas formativos, talleres y charlas orientadas a potenciar las habilidades de los colaboradores, mejorar el liderazgo y promover buenas prácticas laborales.",
+            "subServicios": [
+                "Talleres de Habilidades Blandas",
+                "Capacitación en Liderazgo",
+                "Team Building e Integración",
+                "Talleres de Comunicación Efectiva",
+                "Cursos Técnicos Especializados"
+            ]
         }
     ]
 }
