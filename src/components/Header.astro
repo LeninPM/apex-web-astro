@@ -45,17 +45,15 @@ import servicios from '../data/servicios.json';
 
       <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
         <li class="nav-item">
             <a class="nav-link" href="/">Inicio</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/conocenos">Conócenos</a>
-        </li>
-        
+
         <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle fw-bold" id="navbarDropdownServicios" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Servicios
-    </a>
+            <a class="nav-link dropdown-toggle fw-bold" id="navbarDropdownServicios" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Servicios
+            </a>
             <ul class="dropdown-menu">
                 {servicios.serviciosEmpresa.map(servicio => (
                     <li>
@@ -65,6 +63,10 @@ import servicios from '../data/servicios.json';
                     </li>
                 ))}
             </ul>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/conocenos">Conócenos</a>
         </li>
         
         <li class="nav-item">

@@ -1,6 +1,8 @@
 ---
 // src/components/Footer.astro
 import datos from '../data/sitio.json';
+// ¡IMPORTAMOS LOS SERVICIOS TAMBIÉN PARA LISTARLOS!
+import servicios from '../data/servicios.json';
 
 // Definimos los tipos de iconos
 const iconMap: Record<string, string> = {
@@ -13,73 +15,97 @@ const iconMap: Record<string, string> = {
 
 const anio = new Date().getFullYear();
 ---
-<footer class="bg-dark text-white pt-5">
+<footer class="bg-black text-white pt-5 pb-4">
     <div class="container">
-        <div class="row">
+        <div class="row g-4">
 
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-6">
                 <a class="navbar-brand fw-bold text-white fs-4 d-block mb-3" href="/">
-                    <img src="/images/logos/LOGO_NEGATIVO.webp"
-                     alt="Logo de Consultoría Apex" width="150" 
-                     height="auto" class="d-inline-block align-text-top me-2">
+                    <img src="/images/logos/LOGO_NEGATIVO.webp" alt="Logo de Consultoría Apex" width="140" height="auto" class="d-inline-block align-text-top">
                 </a>
                 <p class="text-secondary small">{datos.quienesSomos}</p>
+                
+                <div class="d-flex gap-3 mt-3">
+                    {datos.redesSociales.map(red => (
+                        <a href={red.url} target="_blank" class="link-light fs-5" aria-label={red.nombre}>
+                            <i class={iconMap[red.nombre.toLowerCase()]}></i>
+                        </a>
+                    ))}
+                </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="fw-bold mb-3">Contáctanos</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2">
-                        <i class="bi bi-envelope me-2 text-warning"></i>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="fw-bold mb-3 text-warning">Nuestros Servicios</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-unstyled small">
+                            {servicios.serviciosEmpresa.slice(0, 4).map(s => (
+                                <li class="mb-2">
+                                    <a href={`/servicios/${s.slug}/`} class="text-secondary text-decoration-none hover-link">
+                                        {s.nombre}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled small">
+                            {servicios.serviciosEmpresa.slice(4).map(s => (
+                                <li class="mb-2">
+                                    <a href={`/servicios/${s.slug}/`} class="text-secondary text-decoration-none hover-link">
+                                        {s.nombre}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-bold mb-3 text-warning">Contáctanos</h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-2 d-flex">
+                        <i class="bi bi-envelope me-2 text-secondary"></i>
                         <a href={`mailto:${datos.contacto.email}`} class="text-white text-decoration-none">
                             {datos.contacto.email}
                         </a>
                     </li>
-                    <li class="mb-2">
-                        <i class="bi bi-phone me-2 text-warning"></i>
+                    <li class="mb-2 d-flex">
+                        <i class="bi bi-phone me-2 text-secondary"></i>
                         <a href={`tel:${datos.contacto.telefono}`} class="text-white text-decoration-none">
                             {datos.contacto.telefono}
                         </a>
                     </li>
-                    <li class="mb-2">
-                        <i class="bi bi-geo-alt me-2 text-warning"></i>
-                        {datos.contacto.direccion}
+                    <li class="mb-2 d-flex">
+                        <i class="bi bi-geo-alt me-2 text-secondary"></i>
+                        <span>{datos.contacto.direccion}</span>
                     </li>
                 </ul>
             </div>
 
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5 class="fw-bold mb-3">Secciones</h5>
-                <ul class="list-unstyled">
-                    <li><a href="/" class="text-white text-decoration-none">Inicio</a></li>
-                    <li><a href="/conocenos" class="text-white text-decoration-none">Conócenos</a></li>
-                    <li><a href="/empresas" class="text-white text-decoration-none">Empresas</a></li>
-                    <li><a href="/candidatos" class="text-white text-decoration-none">Candidatos</a></li>
-                    <li><a href="/contacto" class="text-white text-decoration-none">Contacto</a></li>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="fw-bold mb-3 text-warning">Menú</h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="/" class="text-secondary text-decoration-none hover-link">Inicio</a></li>
+                    <li class="mb-2"><a href="/conocenos" class="text-secondary text-decoration-none hover-link">Conócenos</a></li>
+                    <li class="mb-2"><a href="/empresas" class="text-secondary text-decoration-none hover-link">Empresas</a></li>
+                    <li class="mb-2"><a href="/candidatos" class="text-secondary text-decoration-none hover-link">Candidatos</a></li>
                 </ul>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4 text-lg-end text-md-start">
-                <h5 class="fw-bold mb-3">Síguenos</h5>
-                
-                <div class="d-flex d-lg-block justify-content-center justify-content-lg-end">
-                    {datos.redesSociales.map(red => (
-                        <a 
-                          href={red.url} 
-                          target="_blank" 
-                          class="link-light me-3 fs-4"
-                          aria-label={`Visita nuestro ${red.nombre}`}
-                        ><i class={iconMap[red.nombre.toLowerCase()]}></i></a>
-                    ))}
-                </div>
-            </div>
         </div>
 
-        <div class="border-top py-3 mt-4 text-center">
+        <div class="border-top border-secondary mt-4 pt-4 text-center">
             <p class="mb-0 small text-secondary">
-                &copy; {new Date().getFullYear()} Consultoría Apex. Todos los derechos reservados.
+                &copy; {anio} Consultoría Apex. Todos los derechos reservados.
             </p>
         </div>
-
     </div>
 </footer>
+
+<style>
+    .hover-link:hover {
+        color: #F9B341 !important; /* Color Naranja al pasar el mouse */
+    }
+</style>
