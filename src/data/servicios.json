@@ -1,0 +1,44 @@
+{
+    "serviciosEmpresa": [
+        { 
+            "nombre": "Selección de Talento", 
+            "slug": "seleccion-de-talento",
+            "descripcion": "Identificamos y captamos a los mejores candidatos para tu empresa, a través de procesos estructurados de búsqueda, filtrado y evaluación, garantizando perfiles alineados a las necesidades y cultura de tu organización."
+        },
+        { 
+            "nombre": "Evaluaciones Psicológicas", 
+            "slug": "evaluaciones-psicologicas",
+            "descripcion": "Aplicamos pruebas psicológicas y ocupacionales con estándares técnicos, brindando informes precisos que validan la idoneidad, competencias y bienestar emocional de los colaboradores en distintos niveles."
+        },
+        { 
+            "nombre": "Consultoría en RR. HH.", 
+            "slug": "consultoria-rrhh",
+            "descripcion": "Diseñamos e implementamos estrategias y políticas en gestión humana, analizando procesos laborales, desempeño y clima organizacional, para fomentar un entorno productivo y gestionar el talento de manera estratégica."
+        },
+        { 
+            "nombre": "Gestión en SSOMA", 
+            "slug": "gestion-ssoma",
+            "descripcion": "Implementamos diagnósticos, programas y acciones en seguridad y salud ocupacional, enfocados en la prevención de riesgos laborales, el cumplimiento normativo y la protección de los trabajadores."
+        },
+        { 
+            "nombre": "Desarrollo Web", 
+            "slug": "desarrollo-web",
+            "descripcion": "Creamos sitios web funcionales y personalizados que responden a las necesidades y objetivos de tu empresa, fortaleciendo su presencia digital con diseño moderno y experiencia de usuario optimizada."
+        },
+        { 
+            "nombre": "Personal de Salud Externo", 
+            "slug": "personal-salud-externo",
+            "descripcion": "Proveemos personal profesional en salud para campañas, proyectos y actividades médicas corporativas, asegurando atención experta y cumplimiento del protocolo ocupacional."
+        },
+        { 
+            "nombre": "Capacitaciones Corporativas", 
+            "slug": "capacitaciones-corporativas",
+            "descripcion": "Desarrollamos programas formativos, talleres y charlas orientadas a potenciar las habilidades de los colaboradores, mejorar el liderazgo y promover buenas prácticas laborales dentro de tu organización."
+        },
+        { 
+            "nombre": "Empleabilidad y Branding Profesional", 
+            "slug": "empleabilidad-y-branding",
+            "descripcion": "Brindamos orientación personalizada a estudiantes y profesionales para su inserción efectiva en el mercado laboral. A través de coaching, desarrollo de CV, simulaciones y acompañamiento."
+        }
+    ]
+}

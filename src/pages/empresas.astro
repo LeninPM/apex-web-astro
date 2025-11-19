@@ -1,42 +1,10 @@
 ---
 // src/pages/empresas.astro
 import Layout from '../layouts/Layout.astro';
+import serviciosData from '../data/servicios.json';
 
-// Datos extraídos directamente del documento del cliente
-const serviciosEmpresa = [
-    { 
-        nombre: "Selección de Talento", 
-        descripcion: "Identificamos y captamos a los mejores candidatos para tu empresa, a través de procesos estructurados de búsqueda, filtrado y evaluación, garantizando perfiles alineados a las necesidades y cultura de tu organización."
-    },
-    { 
-        nombre: "Evaluaciones Psicológicas", 
-        descripcion: "Aplicamos pruebas psicológicas y ocupacionales con estándares técnicos, brindando informes precisos que validan la idoneidad, competencias y bienestar emocional de los colaboradores en distintos niveles."
-    },
-    { 
-        nombre: "Personal de Salud Externo", 
-        descripcion: "Proveemos personal profesional en salud para campañas, proyectos y actividades médicas corporativas, asegurando atención experta y cumplimiento del protocolo ocupacional."
-    },
-    { 
-        nombre: "Consultoría en RR. HH.", 
-        descripcion: "Diseñamos e implementamos estrategias y políticas en gestión humana, analizando procesos laborales, desempeño y clima organizacional, para fomentar un entorno productivo y gestionar el talento de manera estratégica."
-    },
-    { 
-        nombre: "Capacitaciones Corporativas", 
-        descripcion: "Desarrollamos programas formativos, talleres y charlas orientadas a potenciar las habilidades de los colaboradores, mejorar el liderazgo y promover buenas prácticas laborales dentro de tu organización."
-    },
-    { 
-        nombre: "Empleabilidad y Branding Profesional", 
-        descripcion: "Brindamos orientación personalizada a estudiantes y profesionales para su inserción efectiva en el mercado laboral. A través de coaching, desarrollo de CV, simulaciones y acompañamiento."
-    },
-    { 
-        nombre: "Gestión en SSOMA", 
-        descripcion: "Implementamos diagnósticos, programas y acciones en seguridad y salud ocupacional, enfocados en la prevención de riesgos laborales, el cumplimiento normativo y la protección de los trabajadores."
-    },
-    { 
-        nombre: "Diseño Web Corporativo", 
-        descripcion: "Creamos sitios web funcionales y personalizados que responden a las necesidades y objetivos de tu empresa, fortaleciendo su presencia digital con diseño moderno y experiencia de usuario optimizada."
-    }
-];
+// Usamos el array completo de serviciosEmpresa del JSON
+const serviciosEmpresa = serviciosData.serviciosEmpresa;
 ---
 <Layout title="Soluciones para Empresas">
 
@@ -49,33 +17,34 @@ const serviciosEmpresa = [
         </div>
     </div>
     
-    <div class="container py-5">
+    <div class="container py-5"> 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            
-            {serviciosEmpresa.map(servicio => (
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0 hover-card">
-                        <div class="card-body d-flex flex-column p-4">
-                            <h4 class="card-title fw-bold text-primary mb-3">{servicio.nombre}</h4>
-                            <p class="card-text flex-grow-1 text-secondary">{servicio.descripcion}</p>
-                            <a href="/contacto" class="btn btn-outline-primary mt-auto w-100">
-                                Solicitar Cotización
-                            </a>
-                        </div>
+        
+        {serviciosEmpresa.map(servicio => (
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 hover-card">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h3 class="card-title fw-bold text-primary mb-3">{servicio.nombre}</h3>
+                        <p class="card-text flex-grow-1 text-secondary">{servicio.descripcion}</p>
+                        
+                        <a href={`/servicios/${servicio.slug}/`} class="btn btn-primary btn-sm mt-auto w-100">
+                            Ver Detalles
+                        </a>
                     </div>
                 </div>
-            ))}
+            </div>
+        ))}
 
         </div>
-    </div>
-</Layout>
+    </div> 
 
-<style>
-    .hover-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hover-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-    }
-</style>
+    <style>
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        }
+    </style>
+</Layout>

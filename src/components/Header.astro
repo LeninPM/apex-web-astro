@@ -1,7 +1,10 @@
 ---
 // src/components/Header.astro
 // Este componente ahora controla AMBAS barras de navegación.
+
+import servicios from '../data/servicios.json';
 ---
+
 
 <header>
   <nav class="bg-light border-bottom py-1 d-none d-lg-block">
@@ -21,13 +24,11 @@
     <div class="container-fluid">
       <a class="navbar-brand fw-bold" href="/">
         <img
-          src="/favicon.svg"
+          src="/images/logos/LOGO_ORIGINAL_RECORTADO.webp"
           alt="Apex Logo"
-          width="30"
-          height="24"
-          class="d-inline-block align-text-top"
-        />
-        Consultoría Apex
+          width="150"
+          height="auto"
+          class="d-inline-block align-text-top">
       </a>
 
       <button
@@ -43,18 +44,36 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item">
             <a class="nav-link" href="/">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/conocernos">Conócenos</a>
-          </li>
-          <li class="nav-item">
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-bold" id="navbarDropdownServicios" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Servicios
+            </a>
+            <ul class="dropdown-menu">
+                {servicios.serviciosEmpresa.map(servicio => (
+                    <li>
+                        <a class="dropdown-item" href={`/servicios/${servicio.slug}/`}>
+                            {servicio.nombre}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/conocenos">Conócenos</a>
+        </li>
+        
+        <li class="nav-item">
             <a class="nav-link" href="/contacto">Contacto</a>
-          </li>
-        </ul>
-      </div>
+        </li>
+    </ul>
+</div>
     </div>
   </nav>
 </header>
