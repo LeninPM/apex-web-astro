@@ -1,48 +1,81 @@
 ---
 // src/pages/empresas.astro
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
 
-// Array de los servicios tomados del briefing
+// Datos extraídos directamente del documento del cliente
 const serviciosEmpresa = [
-  { nombre: "Ssoma (como servicio)", fuente: 7 },
-  { nombre: "Psicología Ocupacional", fuente: 8 },
-  { nombre: "Selección de Personal", fuente: 9 },
-  { nombre: "Campañas Ocupacionales", fuente: 10 },
-  { nombre: "Evaluaciones Psicológicas (Ocupacionales)", fuente: 11 },
-  { nombre: "Asesoría y Empleabilidad", fuente: 12 },
-  { nombre: "Capacitaciones y Talleres", fuente: 13 },
-  { nombre: "Diagnóstico Organizacional", fuente: 14 },
-  { nombre: "Desarrollo Web", fuente: 15 },
+    { 
+        nombre: "Selección de Talento", 
+        descripcion: "Identificamos y captamos a los mejores candidatos para tu empresa, a través de procesos estructurados de búsqueda, filtrado y evaluación, garantizando perfiles alineados a las necesidades y cultura de tu organización."
+    },
+    { 
+        nombre: "Evaluaciones Psicológicas", 
+        descripcion: "Aplicamos pruebas psicológicas y ocupacionales con estándares técnicos, brindando informes precisos que validan la idoneidad, competencias y bienestar emocional de los colaboradores en distintos niveles."
+    },
+    { 
+        nombre: "Personal de Salud Externo", 
+        descripcion: "Proveemos personal profesional en salud para campañas, proyectos y actividades médicas corporativas, asegurando atención experta y cumplimiento del protocolo ocupacional."
+    },
+    { 
+        nombre: "Consultoría en RR. HH.", 
+        descripcion: "Diseñamos e implementamos estrategias y políticas en gestión humana, analizando procesos laborales, desempeño y clima organizacional, para fomentar un entorno productivo y gestionar el talento de manera estratégica."
+    },
+    { 
+        nombre: "Capacitaciones Corporativas", 
+        descripcion: "Desarrollamos programas formativos, talleres y charlas orientadas a potenciar las habilidades de los colaboradores, mejorar el liderazgo y promover buenas prácticas laborales dentro de tu organización."
+    },
+    { 
+        nombre: "Empleabilidad y Branding Profesional", 
+        descripcion: "Brindamos orientación personalizada a estudiantes y profesionales para su inserción efectiva en el mercado laboral. A través de coaching, desarrollo de CV, simulaciones y acompañamiento."
+    },
+    { 
+        nombre: "Gestión en SSOMA", 
+        descripcion: "Implementamos diagnósticos, programas y acciones en seguridad y salud ocupacional, enfocados en la prevención de riesgos laborales, el cumplimiento normativo y la protección de los trabajadores."
+    },
+    { 
+        nombre: "Diseño Web Corporativo", 
+        descripcion: "Creamos sitios web funcionales y personalizados que responden a las necesidades y objetivos de tu empresa, fortaleciendo su presencia digital con diseño moderno y experiencia de usuario optimizada."
+    }
 ];
 ---
-
 <Layout title="Soluciones para Empresas">
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5">Soluciones para Empresas</h1>
-      <p class="lead">
-        Ayudamos a tu organización a crecer con talento y estrategia.
-      </p>
-    </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      {
-        serviciosEmpresa.map((servicio) => (
-          <div class="col">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">{servicio.nombre}</h5>
-                <p class="card-text">
-                  (Descripción corta del servicio. "Marky" debe rellenar esto).
-                </p>
-                <a href="#" class="btn btn-primary">
-                  Ver más
-                </a>
-              </div>
-            </div>
-          </div>
-        ))
-      }
+    <div class="bg-light border-bottom py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold text-primary">Soluciones para Empresas</h1>
+            <p class="lead col-md-8 mx-auto text-muted">
+                Optimizamos la gestión del talento y brindamos soluciones ágiles para el crecimiento de tu organización.
+            </p>
+        </div>
     </div>
-  </div>
+    
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            {serviciosEmpresa.map(servicio => (
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 hover-card">
+                        <div class="card-body d-flex flex-column p-4">
+                            <h4 class="card-title fw-bold text-primary mb-3">{servicio.nombre}</h4>
+                            <p class="card-text flex-grow-1 text-secondary">{servicio.descripcion}</p>
+                            <a href="/contacto" class="btn btn-outline-primary mt-auto w-100">
+                                Solicitar Cotización
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+
+        </div>
+    </div>
 </Layout>
+
+<style>
+    .hover-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    }
+</style>

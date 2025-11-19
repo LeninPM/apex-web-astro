@@ -1,30 +1,77 @@
 ---
 // src/pages/candidatos.astro
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+
+// Datos extraídos para candidatos
+const serviciosCandidato = [
+    {
+        titulo: "Diseño de Currículum Profesional",
+        descripcion: "Elaboramos CVs modernos y estratégicos que resaltan tus logros y competencias, compatibles con sistemas ATS para captar la atención de reclutadores.",
+        icono: "bi bi-file-earmark-person"
+    },
+    {
+        titulo: "Asesoría en Empleabilidad",
+        descripcion: "Sesiones personalizadas donde analizamos tu perfil, definimos tus objetivos y trazamos un plan eficaz para avanzar profesionalmente.",
+        icono: "bi bi-compass"
+    },
+    {
+        titulo: "Simulación de Entrevistas",
+        descripcion: "Prácticas de entrevistas en vivo con retroalimentación especializada para proyectar seguridad, claridad y profesionalismo.",
+        icono: "bi bi-chat-dots"
+    },
+    {
+        titulo: "Optimización de LinkedIn",
+        descripcion: "Potenciamos tu perfil en LinkedIn para aumentar tu visibilidad y atraer oportunidades laborales de acuerdo a tus metas.",
+        icono: "bi bi-linkedin"
+    },
+    {
+        titulo: "Plan de Reinserción Laboral",
+        descripcion: "Programa intensivo de 30 días que incluye CV, asesoría estratégica, simulación de entrevistas y seguimiento personalizado.",
+        icono: "bi bi-calendar-check"
+    }
+];
 ---
+<Layout title="Para Candidatos">
 
-<Layout title="Oportunidades para Candidatos">
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <h1 class="display-5">Impulsa tu Carrera</h1>
-      <p class="lead">
-        Te ayudamos a alcanzar tu máximo potencial profesional.
-      </p>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card shadow-sm">
-          <div class="card-body text-center">
-            <h5 class="card-title">Creación de CV</h5>
-            <p class="card-text">
-              Diseñamos y optimizamos tu currículum para destacar en los
-              procesos de selección.
+    <div class="bg-light border-bottom py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold text-primary">Empleabilidad y Branding Profesional</h1>
+            <p class="lead col-md-8 mx-auto text-muted">
+                Te ayudamos a destacar en el mercado laboral con servicios diseñados para impulsar tu perfil, optimizar tu visibilidad y prepararte para enfrentar con éxito procesos de selección.
             </p>
-            <a href="/contacto" class="btn btn-primary">¡Comenzar ahora!</a>
-          </div>
+            <a href="/contacto" class="btn btn-primary btn-lg mt-3 px-5">Agendar Asesoría</a>
         </div>
-      </div>
     </div>
-  </div>
+
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+            
+            {serviciosCandidato.map(servicio => (
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm h-100 border-0 text-center hover-card">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="mb-3 text-primary">
+                                <i class={`${servicio.icono} display-4`}></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3">{servicio.titulo}</h4>
+                            <p class="card-text text-secondary flex-grow-1">{servicio.descripcion}</p>
+                            <a href="/contacto" class="btn btn-primary mt-3">
+                                Más Información
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+
+        </div>
+    </div>
 </Layout>
+
+<style>
+    .hover-card {
+        transition: transform 0.3s ease;
+    }
+    .hover-card:hover {
+        transform: translateY(-5px);
+    }
+</style>

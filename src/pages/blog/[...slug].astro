@@ -1,0 +1,45 @@
+---
+// src/pages/blog/[...slug].astro
+import Layout from '../../layouts/Layout.astro';
+// 1. ¡IMPORTAMOS EL TIPO!
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+// 2. ¡DEFINIMOS LOS PROPS!
+// Esto le dice a la página qué 'props' espera recibir
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+// 3. Esta función le dice a Astro qué páginas debe construir
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  // 4. Añadimos el tipo a 'post' aquí también
+  return posts.map((post: CollectionEntry<'blog'>) => ({
+    params: { slug: post.slug }, 
+    props: { post }, 
+  }));
+}
+
+// 5. Ahora TypeScript sabe que 'post' es de tipo 'CollectionEntry<'blog'>'
+// ¡Y todos los errores de 'never' desaparecen!
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+<Layout title={post.data.title}>
+    <div class="container py-5">
+        <article class="col-md-8 mx-auto">
+            <h1 class="display-4 mb-3">{post.data.title}</h1>
+            {post.data.heroImage && (
+                <img src={post.data.heroImage} class="img-fluid rounded mb-4" alt={post.data.title}>
+            )}
+
+            <div class="fs-5">
+                <Content />
+            </div>
+            
+            <a href="/blog" class="btn btn-outline-primary mt-5">
+                &larr; Volver al Blog
+            </a>
+        </article>
+    </div>
+</Layout>

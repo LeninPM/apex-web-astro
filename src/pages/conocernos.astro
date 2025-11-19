@@ -1,10 +1,92 @@
 ---
-import Layout from "../layouts/Layout.astro";
----
+// src/pages/conocernos.astro
+import Layout from '../layouts/Layout.astro';
 
+// IDs de video de ejemplo (Mantenemos los que ya configuramos)
+const videos = [
+  {
+    id: 'Y672xdk82Y4', 
+    title: 'Presentación Apex'
+  },
+  {
+    id: 'dkrFvW8fZRM',
+    title: 'Video de Presentación 2'
+  }
+];
+---
 <Layout title="Conócenos">
-  <div class="container py-5 text-center">
-    <h1 class="display-5">Sobre Apex</h1>
-    <p class="lead">Página en construcción. Aquí irá la Misión y Visión.</p>
-  </div>
+
+    <div class="bg-light py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold text-primary mb-4">¿Quiénes somos?</h1>
+            <div class="col-lg-8 mx-auto">
+                <p class="lead">
+                    Somos APEX, una consultora innovadora en Recursos Humanos comprometida con conectar el potencial humano con las oportunidades estratégicas que transforman organizaciones.
+                </p>
+                <p class="text-muted">
+                    Nacemos con la visión de optimizar la gestión del talento, fortalecer la empleabilidad y brindar soluciones ágiles, confiables y accesibles. Creemos en el desarrollo humano como motor para el éxito colectivo y trabajamos con una perspectiva moderna, digital y centrada en las personas.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row g-4 align-items-stretch">
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100 border-0 bg-white">
+                    <div class="card-body p-5">
+                        <div class="text-primary mb-3">
+                            <i class="bi bi-rocket-takeoff fs-1"></i>
+                        </div>
+                        <h3 class="card-title fw-bold mb-3">Misión</h3>
+                        <p class="card-text fs-5">
+                            Impulsar el crecimiento de organizaciones y profesionales mediante servicios integrales de gestión del talento, evaluaciones, empleabilidad y capacitación, basados en tecnología, ética y excelencia operativa.
+                        </p>
+                        <p class="card-text text-muted small mt-3 border-top pt-3">
+                            Nuestro compromiso es aportar soluciones efectivas que generen valor, evolución y bienestar en las personas y empresas que confían en nosotros.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100 border-0 bg-white">
+                    <div class="card-body p-5">
+                        <div class="text-primary mb-3">
+                            <i class="bi bi-eye fs-1"></i>
+                        </div>
+                        <h3 class="card-title fw-bold mb-3">Visión</h3>
+                        <p class="card-text fs-5">
+                            Ser reconocidos como la consultora de recursos humanos líder en el ámbito digital, distinguida por nuestra innovación, calidad humana y capacidad para transformar el panorama laboral en Latinoamérica, contribuyendo al desarrollo sostenible del talento profesional y al crecimiento estratégico de las organizaciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-dark text-white py-5">
+        <div class="container">
+            <h2 class="text-center display-5 mb-5">Conoce Más de Nosotros</h2>
+            <div class="row g-4 justify-content-center">
+                {videos.map(video => (
+                    <div class="col-md-5">
+                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+                            <iframe 
+                                src={`https://www.youtube.com/embed/${video.id}`}
+                                title={video.title} 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://www.youtube.com/@enriquesalvatierra-e2f" class="btn btn-outline-light btn-lg" target="_blank">
+                    Visita nuestro Canal de YouTube
+                </a>
+            </div>
+        </div>
+    </div>
 </Layout>

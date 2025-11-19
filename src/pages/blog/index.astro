@@ -1,0 +1,31 @@
+---
+// src/pages/blog/index.astro
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+const posts: CollectionEntry<'blog'>[] = (await getCollection('blog')).sort(
+    (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
+        b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+<Layout title="Blog de Apex">
+    <div class="container py-5">
+        <h1 class="display-5 text-center mb-5">Blog de Apex</h1>
+        <div class="row g-4">
+            {posts.map((post: CollectionEntry<'blog'>) => (
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        {post.data.heroImage && (
+                            <img src={post.data.heroImage} class="card-img-top" alt={post.data.title}>
+                        )}
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{post.data.title}</h5>
+                            <p class="card-text flex-grow-1">{post.data.description}</p>
+                            <a href={`/blog/${post.slug}/`} class="btn btn-primary mt-auto">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</Layout>

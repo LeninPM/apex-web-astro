@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # .gitignore
 .env
+
+# Local Netlify folder
+.netlify
