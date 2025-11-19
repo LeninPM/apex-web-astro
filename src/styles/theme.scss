@@ -1,0 +1,129 @@
+/* src/styles/theme.scss */
+
+/* ========================================
+   1. IMPORTACIÓN DE FUENTES (Solo .ttf)
+   ========================================
+*/
+
+@font-face {
+  font-family: 'Heavitas';
+  /* Solo buscamos el archivo .ttf que tienes */
+  src: url('/fonts/Heavitas.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cooveltica';
+  src: url('/fonts/Cooveltica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  /* Asegúrate de que el nombre del archivo coincida EXACTAMENTE (mayúsculas/minúsculas) */
+  src: url('/fonts/CenturyGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ========================================
+   2. VARIABLES DE COLOR (Paleta Apex)
+   ========================================
+   Definimos tus colores exactos aquí primero.
+*/
+$space-cadet: #161654; // Azul Oscuro
+$dark-sky-blue: #8fbfda; // Celeste
+$yellow-orange: #f9b341; // Naranja
+$cultured: #f4f4f4; // Fondo Hueso
+$white: #ffffff;
+
+/* ========================================
+   3. SOBRESCRIBIR VARIABLES DE BOOTSTRAP
+   ========================================
+   Aquí asignamos tus colores a la lógica de Bootstrap.
+*/
+
+// Colores del Sistema
+$primary: $space-cadet; // btn-primary, text-primary
+$secondary: $dark-sky-blue; // btn-secondary
+$warning: $yellow-orange; // btn-warning (Ideal para botones de acción)
+$light: $cultured; // bg-light
+$dark: $space-cadet; // Hacemos que 'bg-dark' sea tu azul corporativo
+$info: $dark-sky-blue;
+
+// Cuerpo y Fondo
+$body-bg: $cultured; // El fondo de toda la web será color 'hueso'
+$body-color: $space-cadet; // Todo el texto será azul oscuro por defecto
+
+// Tipografía
+$font-family-base:
+  "Century Gothic", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: "Heavitas", "Impact", sans-serif;
+$headings-font-weight: 700;
+$headings-color: $primary;
+
+// Bordes y Componentes
+$border-radius: 0.5rem;
+$border-radius-lg: 1rem; // Tarjetas más redondeadas
+
+// Navegación (Navbar)
+$navbar-light-color: $space-cadet;
+$navbar-light-hover-color: $yellow-orange;
+$navbar-light-active-color: $primary;
+
+/* ========================================
+   4. IMPORTAR BOOTSTRAP
+   ========================================
+   Ahora que las variables están definidas, cargamos Bootstrap.
+*/
+@import "bootstrap/scss/bootstrap";
+
+/* ========================================
+   5. ESTILOS PERSONALIZADOS EXTRA
+   ========================================
+   Ajustes finos para que se vea perfecto.
+*/
+
+// Clase para usar Cooveltica manualmente si lo necesitas
+.font-cooveltica {
+  font-family: "Cooveltica", sans-serif;
+}
+
+// Ajuste para botones primarios (Azul)
+.btn-primary {
+  color: $white;
+  border-color: $space-cadet;
+  &:hover {
+    background-color: lighten($space-cadet, 10%);
+    border-color: lighten($space-cadet, 10%);
+    color: $white;
+  }
+}
+
+// Ajuste para botones de advertencia/acción (Naranja)
+// Hacemos que el texto sea azul para que sea legible
+.btn-warning {
+  color: $space-cadet;
+  font-weight: bold;
+  &:hover {
+    background-color: lighten($yellow-orange, 10%);
+    color: $space-cadet;
+  }
+}
+
+// Ajuste para las tarjetas (Cards)
+.card {
+  border: none; // Quitamos bordes feos
+  // Si el fondo es gris claro, las tarjetas blancas resaltan solas
+}
+
+// Ajuste para enlaces en el footer
+footer a:hover {
+  color: $yellow-orange !important; // Efecto hover naranja en el footer
+}
