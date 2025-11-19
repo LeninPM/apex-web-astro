@@ -1,28 +1,34 @@
 {
-    "whatsapp": {
-        "numero": "51991057926",
-        "mensaje": "Hola, estoy interesado en sus servicios para empresas."
+  "whatsapp": {
+    "numero": "51991057926",
+    "mensaje": "Hola, estoy interesado en sus servicios para empresas."
+  },
+  "contacto": {
+    "email": "contacto@apex.com",
+    "telefono": "+51 987 654 321",
+    "direccion": "Lima, Perú"
+  },
+  "quienesSomos": "Tu socio estratégico en talento y tecnología.",
+  "redesSociales": [
+    {
+      "nombre": "Instagram",
+      "url": "https://instagram.com/apex_mentoring/?hl=es-es"
     },
-    "redesSociales": [
-        {
-            "nombre": "Instagram",
-            "url": "https://instagram.com/apex_mentoring/?hl=es-es"
-        },
-        {
-            "nombre": "Facebook",
-            "url": "https://facebook.com/profile.php?id=61565695614986"
-        },
-        {
-            "nombre": "TikTok",
-            "url": "https://tiktok.com/@apex_mentoring"
-        },
-        {
-            "nombre": "LinkedIn",
-            "url": "https://linkedin.com/company/apex-s-a/posts/?feedView=all"
-        },
-        {
-            "nombre": "YouTube",
-            "url": "https://www.youtube.com/@enriquesalvatierra-e2f"
-        }
-    ]
+    {
+      "nombre": "Facebook",
+      "url": "https://facebook.com/profile.php?id=61565695614986"
+    },
+    {
+      "nombre": "TikTok",
+      "url": "https://tiktok.com/@apex_mentoring"
+    },
+    {
+      "nombre": "LinkedIn",
+      "url": "https://linkedin.com/company/apex-s-a/posts/?feedView=all"
+    },
+    {
+      "nombre": "YouTube",
+      "url": "https://www.youtube.com/@enriquesalvatierra-e2f"
+    }
+  ]
 }

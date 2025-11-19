@@ -7,7 +7,6 @@
 
 @font-face {
   font-family: 'Heavitas';
-  /* Solo buscamos el archivo .ttf que tienes */
   src: url('/fonts/Heavitas.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -24,7 +23,6 @@
 
 @font-face {
   font-family: 'Century Gothic';
-  /* Asegúrate de que el nombre del archivo coincida EXACTAMENTE (mayúsculas/minúsculas) */
   src: url('/fonts/CenturyGothic.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -42,6 +40,7 @@ $dark-sky-blue: #8fbfda; // Celeste
 $yellow-orange: #f9b341; // Naranja
 $cultured: #f4f4f4; // Fondo Hueso
 $white: #ffffff;
+$blue-soft: #2c2c7c;
 
 /* ========================================
    3. SOBRESCRIBIR VARIABLES DE BOOTSTRAP
@@ -126,4 +125,25 @@ $navbar-light-active-color: $primary;
 // Ajuste para enlaces en el footer
 footer a:hover {
   color: $yellow-orange !important; // Efecto hover naranja en el footer
+}
+
+.hero-background {
+    /* 1. Imagen de fondo para el Hero de la página principal.
+       IMPORTANTE: Ajusta 'talento_tecnologia.png' si tu archivo usa otra extensión.
+    */
+    background-image: 
+        linear-gradient(rgba($space-cadet, 0.8), rgba($space-cadet, 0.8)), /* Reduce la opacidad del azul */
+        url('/images/logos/talento_tecnologia.png');
+        
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax sutil */
+    min-height: 80vh; /* Asegura que la sección sea alta, cubriendo el 80% de la ventana */
+}
+
+.hero-title {
+    color: $white !important;
+}
+.hero-soft-bg {
+    background-color: $blue-soft !important; /* Usamos el azul más suave */
 }

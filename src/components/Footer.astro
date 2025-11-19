@@ -13,70 +13,73 @@ const iconMap: Record<string, string> = {
 
 const anio = new Date().getFullYear();
 ---
-<footer class="bg-dark text-white pt-5 pb-4">
+<footer class="bg-dark text-white pt-5">
     <div class="container">
-        <div class="row g-4">
+        <div class="row">
 
-            <div class="col-lg-4 col-md-6">
-                <a class="navbar-brand fw-bold text-white fs-4" href="/">
-                    <img src="/favicon.svg" alt="Apex Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    Consultoría Apex
+            <div class="col-lg-3 col-md-6 mb-4">
+                <a class="navbar-brand fw-bold text-white fs-4 d-block mb-3" href="/">
+                    <img src="/images/logos/LOGO_NEGATIVO.webp"
+                     alt="Logo de Consultoría Apex" width="150" 
+                     height="auto" class="d-inline-block align-text-top me-2">
                 </a>
-                <p class="mt-2 small text-white-50">
-                    Tu socio estratégico en talento y tecnología.
-                </p>
+                <p class="text-secondary small">{datos.quienesSomos}</p>
             </div>
 
-            <div class="col-lg-2 col-md-3">
-                <h5 class="fw-bold mb-3">Empresas</h5>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="fw-bold mb-3">Contáctanos</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2">
-                        <a href="/empresas" class="text-decoration-none link-light">
-                            Ver Soluciones
+                        <i class="bi bi-envelope me-2 text-warning"></i>
+                        <a href={`mailto:${datos.contacto.email}`} class="text-white text-decoration-none">
+                            {datos.contacto.email}
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a href="/contacto" class="text-decoration-none link-light opacity-75">
-                            Contactar
+                        <i class="bi bi-phone me-2 text-warning"></i>
+                        <a href={`tel:${datos.contacto.telefono}`} class="text-white text-decoration-none">
+                            {datos.contacto.telefono}
                         </a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-geo-alt me-2 text-warning"></i>
+                        {datos.contacto.direccion}
                     </li>
                 </ul>
             </div>
 
-            <div class="col-lg-2 col-md-3">
-                <h5 class="fw-bold mb-3">Candidatos</h5>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="fw-bold mb-3">Secciones</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2">
-                        <a href="/candidatos" class="text-decoration-none link-light">
-                            Impulsa tu Carrera
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="/contacto" class="text-decoration-none link-light opacity-75">
-                            Contactar
-                        </a>
-                    </li>
+                    <li><a href="/" class="text-white text-decoration-none">Inicio</a></li>
+                    <li><a href="/conocenos" class="text-white text-decoration-none">Conócenos</a></li>
+                    <li><a href="/empresas" class="text-white text-decoration-none">Empresas</a></li>
+                    <li><a href="/candidatos" class="text-white text-decoration-none">Candidatos</a></li>
+                    <li><a href="/contacto" class="text-white text-decoration-none">Contacto</a></li>
                 </ul>
             </div>
 
-            <div class="col-lg-4 col-md-12 text-lg-end text-md-start">
+            <div class="col-lg-4 col-md-6 mb-4 text-lg-end text-md-start">
                 <h5 class="fw-bold mb-3">Síguenos</h5>
-                {datos.redesSociales.map(red => (
-                    <a 
-                      href={red.url} 
-                      target="_blank" 
-                      class="link-light me-3 fs-4"
-                      aria-label={`Visita nuestro ${red.nombre}`}
-                    >
-                        <i class={iconMap[red.nombre.toLowerCase()]}></i>
-                    </a>
-                ))}
+                
+                <div class="d-flex d-lg-block justify-content-center justify-content-lg-end">
+                    {datos.redesSociales.map(red => (
+                        <a 
+                          href={red.url} 
+                          target="_blank" 
+                          class="link-light me-3 fs-4"
+                          aria-label={`Visita nuestro ${red.nombre}`}
+                        ><i class={iconMap[red.nombre.toLowerCase()]}></i></a>
+                    ))}
+                </div>
             </div>
         </div>
 
-        <hr class="my-4">
-        <div class="text-center text-white-50 small">
-            <p>&copy; {anio} Consultoría Apex. Todos los derechos reservados.</p>
+        <div class="border-top py-3 mt-4 text-center">
+            <p class="mb-0 small text-secondary">
+                &copy; {new Date().getFullYear()} Consultoría Apex. Todos los derechos reservados.
+            </p>
         </div>
+
     </div>
 </footer>
