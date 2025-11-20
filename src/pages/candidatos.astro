@@ -35,19 +35,21 @@ const serviciosCandidato = [
 
     <div class="bg-light border-bottom py-5">
         <div class="container text-center">
-            <h1 class="display-4 fw-bold text-primary">Empleabilidad y Branding Profesional</h1>
-            <p class="lead col-md-8 mx-auto text-muted">
+            <h1 class="display-4 fw-bold text-primary" data-aos="fade-down">Empleabilidad y Branding Profesional</h1>
+            <p class="lead col-md-8 mx-auto text-muted" data-aos="fade-up" data-aos-delay="100">
                 Te ayudamos a destacar en el mercado laboral con servicios diseñados para impulsar tu perfil, optimizar tu visibilidad y prepararte para enfrentar con éxito procesos de selección.
             </p>
-            <a href="/contacto" class="btn btn-primary btn-lg mt-3 px-5">Agendar Asesoría</a>
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <a href="/contacto" class="btn btn-primary btn-lg mt-3 px-5">Agendar Asesoría</a>
+            </div>
         </div>
     </div>
 
     <div class="container py-5">
         <div class="row g-4 justify-content-center">
             
-            {serviciosCandidato.map(servicio => (
-                <div class="col-md-6 col-lg-4">
+            {serviciosCandidato.map((servicio, index) => (
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay={index * 100}>
                     <div class="card shadow-sm h-100 border-0 text-center hover-card">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="mb-3 text-primary">
@@ -55,7 +57,7 @@ const serviciosCandidato = [
                             </div>
                             <h4 class="card-title fw-bold mb-3">{servicio.titulo}</h4>
                             <p class="card-text text-secondary flex-grow-1">{servicio.descripcion}</p>
-                            <a href="/contacto" class="btn btn-primary mt-3">
+                            <a href="/contacto" class="btn btn-outline-primary mt-3">
                                 Más Información
                             </a>
                         </div>
@@ -68,10 +70,6 @@ const serviciosCandidato = [
 </Layout>
 
 <style>
-    .hover-card {
-        transition: transform 0.3s ease;
-    }
-    .hover-card:hover {
-        transform: translateY(-5px);
-    }
+    .hover-card { transition: transform 0.3s ease; }
+    .hover-card:hover { transform: translateY(-5px); }
 </style>

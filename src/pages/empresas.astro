@@ -10,8 +10,8 @@ const serviciosEmpresa = serviciosData.serviciosEmpresa;
 
     <div class="bg-light border-bottom py-5">
         <div class="container text-center">
-            <h1 class="display-4 fw-bold text-primary">Soluciones para Empresas</h1>
-            <p class="lead col-md-8 mx-auto text-muted">
+            <h1 class="display-4 fw-bold text-primary" data-aos="fade-down">Soluciones para Empresas</h1>
+            <p class="lead col-md-8 mx-auto text-muted" data-aos="fade-up" data-aos-delay="200">
                 Optimizamos la gestión del talento y brindamos soluciones ágiles para el crecimiento de tu organización.
             </p>
         </div>
@@ -20,8 +20,12 @@ const serviciosEmpresa = serviciosData.serviciosEmpresa;
     <div class="container py-5"> 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         
-        {serviciosEmpresa.map(servicio => (
-            <div class="col">
+        {serviciosEmpresa.map((servicio, index) => (
+            <div 
+                class="col" 
+                data-aos="fade-up" 
+                data-aos-delay={index * 100} 
+            >
                 <div class="card h-100 shadow-sm border-0 hover-card overflow-hidden">
                     
                     <div class="img-container">
