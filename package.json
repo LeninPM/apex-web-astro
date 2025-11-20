@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^6.6.0",
+    "aos": "^2.3.4",
     "astro": "^5.15.5",
     "bootstrap": "^5.3.8",
     "resend": "^6.4.2",
     "sass": "^1.94.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1"
   }

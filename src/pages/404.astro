@@ -1,0 +1,49 @@
+---
+// src/pages/404.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Página no encontrada - Apex">
+    <div class="container py-5 my-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <div class="mb-4 text-primary opacity-25">
+                    <i class="bi bi-compass-fill display-1" style="font-size: 6rem;"></i>
+                </div>
+
+                <h1 class="display-1 fw-bold text-primary mb-3">404</h1>
+                
+                <h2 class="h2 text-dark fw-bold mb-3">¡Ups! Parece que esta página no existe.</h2>
+                <p class="lead text-secondary mb-5">
+                    Es posible que el enlace que seguiste esté roto o que la página se haya movido.
+                    No te preocupes, puedes volver a nuestro sitio principal.
+                </p>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="/" class="btn btn-primary btn-lg px-4 fw-bold">
+                        Volver al Inicio
+                    </a>
+                    <a href="/contacto" class="btn btn-outline-primary btn-lg px-4 fw-bold">
+                        Contactar Soporte
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    /* Animación suave para el icono */
+    .bi-compass-fill {
+        display: inline-block;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(5deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+    }
+</style>

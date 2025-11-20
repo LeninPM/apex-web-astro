@@ -6,29 +6,28 @@
 */
 
 @font-face {
-  font-family: 'Heavitas';
-  src: url('/fonts/Heavitas.ttf') format('truetype');
+  font-family: "Heavitas";
+  src: url("/fonts/Heavitas.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Cooveltica';
-  src: url('/fonts/Cooveltica.ttf') format('truetype');
+  font-family: "Cooveltica";
+  src: url("/fonts/Cooveltica.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Century Gothic';
-  src: url('/fonts/CenturyGothic.ttf') format('truetype');
+  font-family: "Century Gothic";
+  src: url("/fonts/CenturyGothic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
 
 /* ========================================
    2. VARIABLES DE COLOR (Paleta Apex)
@@ -128,22 +127,63 @@ footer a:hover {
 }
 
 .hero-background {
-    /* 1. Imagen de fondo para el Hero de la página principal.
+  /* 1. Imagen de fondo para el Hero de la página principal.
        IMPORTANTE: Ajusta 'talento_tecnologia.png' si tu archivo usa otra extensión.
     */
-    background-image: 
-        linear-gradient(rgba($space-cadet, 0.8), rgba($space-cadet, 0.8)), /* Reduce la opacidad del azul */
-        url('/images/logos/talento_tecnologia.png');
-        
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Efecto parallax sutil */
-    min-height: 80vh; /* Asegura que la sección sea alta, cubriendo el 80% de la ventana */
+  background-image:
+    linear-gradient(rgba($space-cadet, 0.8), rgba($space-cadet, 0.8)),
+    /* Reduce la opacidad del azul */
+      url("/images/logos/talento_tecnologia.png");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efecto parallax sutil */
+  min-height: 80vh; /* Asegura que la sección sea alta, cubriendo el 80% de la ventana */
 }
 
 .hero-title {
-    color: $white !important;
+  color: $white !important;
 }
 .hero-soft-bg {
-    background-color: $blue-soft !important; /* Usamos el azul más suave */
+  background-color: $blue-soft !important; /* Usamos el azul más suave */
+}
+.bg-apex-orange {
+  background-color: $yellow-orange !important;
+
+  // Ajuste para los enlaces dentro de este navbar
+  .nav-link {
+    color: $space-cadet !important; // Texto en Azul Oscuro
+    font-weight: 600; // Un poco más grueso para que se lea bien
+
+    &:hover,
+    &.active {
+      color: $white !important; // Al pasar el mouse, se vuelve Blanco
+    }
+  }
+
+  // Ajuste para el botón "hamburguesa" en móvil
+  .navbar-toggler {
+    border-color: $space-cadet;
+    .navbar-toggler-icon {
+      filter: invert(14%) sepia(38%) saturate(4734%) hue-rotate(228deg)
+        brightness(92%) contrast(97%); /* Pone el icono en azul oscuro */
+    }
+  }
+  /* Efecto Vidrio Moderno */
+  .glass-effect {
+    background: rgba(
+      255,
+      255,
+      255,
+      0.7
+    ) !important; /* Blanco semitransparente */
+    backdrop-filter: blur(10px); /* El efecto borroso detrás */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+  }
+
+  /* Sombra suave moderna (Soft Shadow) */
+  .shadow-soft {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+  }
 }

@@ -4,17 +4,17 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Inicio - Consultoría Apex">
+  
   <div class="hero-background hero-soft-bg text-white border-bottom">
     <div class="container text-center py-5">
-      <h1 class="display-4 fw-bold hero-title">El futuro del talento, hoy</h1>
-      <p class="lead my-4 col-md-8 mx-auto">
+      <h1 class="display-4 fw-bold hero-title" data-aos="fade-down">El futuro del talento, hoy</h1>
+      <p class="lead my-4 col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
         Tu socio estratégico en Recursos Humanos, Psicología Ocupacional y
         Desarrollo Tecnológico.
       </p>
-
-      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center" data-aos="zoom-in" data-aos-delay="400">
         <a href="/empresas" class="btn btn-primary btn-lg px-4">
-          Busco Talento (Empresas)
+          Busco Soluciones (Empresas)
         </a>
         <a href="/candidatos" class="btn btn-outline-light btn-lg px-4">
           Soy Talento (Candidatos)
@@ -24,17 +24,19 @@ import Layout from "../layouts/Layout.astro";
   </div>
 
   <div class="container py-5">
-    <h2 class="text-center mb-4">Nuestras Soluciones</h2>
+    <h2 class="text-center mb-4" data-aos="fade-up">Nuestras Soluciones</h2>
 
     <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card shadow-sm h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Soluciones para Empresas</h5>
-            <p class="card-text flex-grow-1">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card shadow-sm h-100 hover-card border-0">
+          <div class="card-body d-flex flex-column p-4">
+            <h3 class="card-title fw-bold text-primary h4">Soluciones para Empresas</h3>
+            
+            <p class="card-text flex-grow-1 text-dark"> 
               Desde selección de personal y evaluaciones psicológicas hasta
               desarrollo web y consultoría Ssoma. Potenciamos tu organización.
             </p>
+            
             <a href="/empresas" class="btn btn-primary mt-auto">
               Ver Soluciones Empresariales
             </a>
@@ -42,14 +44,16 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card shadow-sm h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Impulso para Candidatos</h5>
-            <p class="card-text flex-grow-1">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="card shadow-sm h-100 hover-card border-0">
+          <div class="card-body d-flex flex-column p-4">
+            <h3 class="card-title fw-bold text-primary h4">Impulso para Candidatos</h3>
+            
+            <p class="card-text flex-grow-1 text-dark">
               Mejoramos tu empleabilidad y te preparamos para el éxito con un CV
               de alto impacto y asesoría personalizada.
             </p>
+            
             <a href="/candidatos" class="btn btn-primary mt-auto">
               Ver Servicios para Candidatos
             </a>
@@ -58,4 +62,28 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </div>
+  
+  <div class="container py-5 text-center">
+    <div class="row align-items-center">
+        <div class="col-md-6 order-md-2" data-aos="fade-left">
+            <img src="/images/logos/talento_tecnologia.png" alt="Tecnología y Talento" 
+                 class="img-fluid rounded-3 shadow-lg" style="max-height: 350px; object-fit: cover;" loading="lazy">
+        </div>
+        <div class="col-md-6 order-md-1 text-md-start mt-4 mt-md-0" data-aos="fade-right">
+            <h2 class="display-5 fw-bold text-primary">Impulsamos la Transformación</h2>
+            
+            <p class="lead text-dark">
+                Combinamos metodologías de Recursos Humanos con análisis de datos y tecnología web 
+                para ofrecer soluciones que garantizan resultados medibles.
+            </p>
+            
+        </div>
+    </div>
+  </div>
+
 </Layout>
+
+<style>
+    .hover-card { transition: transform 0.3s ease; }
+    .hover-card:hover { transform: translateY(-5px); }
+</style>

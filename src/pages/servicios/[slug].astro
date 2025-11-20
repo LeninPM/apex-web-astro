@@ -3,7 +3,6 @@
 import Layout from '../../layouts/Layout.astro';
 import serviciosData from '../../data/servicios.json';
 
-// Lógica de SSR (Server Side Rendering) para obtener el servicio
 const { slug } = Astro.params;
 const servicio = serviciosData.serviciosEmpresa.find(s => s.slug === slug);
 
@@ -14,34 +13,51 @@ if (!servicio) {
 
 <Layout title={servicio.nombre}>
     
-    <div class="service-hero position-relative d-flex align-items-center text-white">
-        <div class="overlay"></div>
+    <div class="service-hero position-relative d-flex align-items-center">
         
         <div class="container position-relative z-2 py-5">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb breadcrumb-dark">
-                    <li class="breadcrumb-item"><a href="/" class="text-white-50 text-decoration-none">Inicio</a></li>
-                    <li class="breadcrumb-item"><a href="/empresas" class="text-white-50 text-decoration-none">Servicios</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">{servicio.nombre}</li>
-                </ol>
-            </nav>
-            <h1 class="display-3 fw-bold mt-3">{servicio.nombre}</h1>
-            <p class="lead col-lg-8 text-light opacity-75">Soluciones integrales diseñadas para potenciar el rendimiento de tu organización.</p>
+            <div class="row">
+                <div class="col-lg-9 col-xl-8">
+                    
+                    <div class="bg-white p-4 p-lg-5 rounded-4 shadow-lg animate-up">
+                        
+                        <nav aria-label="breadcrumb" class="mb-3">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item">
+                                    <a href="/" class="text-primary text-decoration-none small fw-bold">Inicio</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/empresas" class="text-primary text-decoration-none small fw-bold">Servicios</a>
+                                </li>
+                                <li class="breadcrumb-item active text-primary small fw-bold" aria-current="page">
+                                    {servicio.nombre}
+                                </li>
+                            </ol>
+                        </nav>
+
+                        <h1 class="display-4 fw-bold text-primary mb-3">{servicio.nombre}</h1>
+                        
+                        <p class="lead text-dark mb-0">
+                            Soluciones integrales diseñadas para potenciar el rendimiento de tu organización.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="container py-5">
         <div class="row gx-5">
-            
             <div class="col-lg-8 mb-5 mb-lg-0">
-                <h2 class="fw-bold text-primary mb-4">Descripción del Servicio</h2>
-                <p class="fs-5 text-secondary mb-5 leading-relaxed">
+                <h2 class="h3 fw-bold text-primary mb-4 border-bottom pb-2">Descripción del Servicio</h2>
+                <p class="fs-5 text-dark mb-5 leading-relaxed">
                     {servicio.descripcion} 
                     <br><br>
                     En Apex, entendemos que cada empresa es única. Por eso, adaptamos este servicio para cumplir con tus objetivos estratégicos, garantizando calidad, cumplimiento normativo y resultados medibles.
                 </p>
 
-                <h3 class="fw-bold text-primary mb-4">¿Qué incluye este servicio?</h3>
+                <h3 class="h4 fw-bold text-primary mb-4">¿Qué incluye este servicio?</h3>
                 <div class="bg-light p-4 rounded-4 border">
                     <div class="row g-3">
                         {servicio.subServicios ? servicio.subServicios.map(item => (
@@ -59,49 +75,59 @@ if (!servicio) {
             </div>
 
             <div class="col-lg-4">
-                <div class="sticky-top" style="top: 2rem; z-index: 1;">
-                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
-                        <div class="card-header bg-primary text-white p-4 text-center">
-                            <h4 class="mb-0 fw-bold">¿Te interesa?</h4>
-                        </div>
-                        <div class="card-body p-4 text-center">
-                            <p class="text-secondary mb-4">
-                                Solicita una cotización personalizada para <strong>{servicio.nombre}</strong> y recibe respuesta en menos de 24 horas.
-                            </p>
-                            <a href="/contacto" class="btn btn-warning btn-lg w-100 fw-bold mb-3">
-                                Cotizar Ahora
-                            </a>
-                            <div class="small text-muted">
-                                <i class="bi bi-telephone-fill me-1"></i> ¿Dudas? Llámanos al +51 991 057 926
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 p-4 bg-light rounded-4 border text-center">
-                        <h5 class="fw-bold text-primary">¿Buscas talento?</h5>
-                        <p class="small text-secondary mb-3">Descarga nuestro brochure corporativo.</p>
-                        <button class="btn btn-outline-primary btn-sm">Descargar PDF</button>
-                    </div>
+    <div class="sticky-top" style="top: 2rem; z-index: 1;">
+        <div class="card border-0 shadow rounded-4 overflow-hidden">
+            <div class="card-header bg-primary p-4 text-center">
+                <h4 class="mb-0 fw-bold text-white h5">¿Te interesa?</h4>
+            </div>
+            <div class="card-body p-4 text-center bg-white">
+                
+                <p class="text-dark small mb-4">
+                    Solicita una cotización personalizada para <strong>{servicio.nombre}</strong>.
+                </p>
+                
+                <a href="/contacto" class="btn btn-warning w-100 fw-bold mb-3">
+                    Cotizar Ahora
+                </a>
+                <div class="small text-muted">
+                    <i class="bi bi-telephone-fill me-1"></i> +51 991 057 926
                 </div>
             </div>
-
         </div>
     </div>
+</div>
 </Layout>
 
 <style define:vars={{ bgImage: `url("${servicio.imagen}")` }}>
-    /* Estilos para el Hero Dinámico */
+    /* Estilos (Igual que antes) */
     .service-hero {
-        min-height: 400px;
-        background-image: var(--bgImage); /* Usa la imagen del JSON */
+        min-height: 500px; 
+        background-image: var(--bgImage); 
         background-size: cover;
         background-position: center;
+        box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2); 
+    }
+
+    .leading-relaxed {
+        line-height: 1.8;
+    }
+
+    .animate-up {
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, rgba(22,22,84,0.9) 0%, rgba(22,
+    .card-header h4 {
+        color: #ffffff !important;
+    }
+</style>
